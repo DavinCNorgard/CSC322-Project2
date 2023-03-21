@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import re
+from itertools import permutations
 
 # Declare variables used
 constraints = []
@@ -39,6 +40,10 @@ for i in range(len(constraints)):
             operator = '+'
         if '*' in constraints[i][1]:
             operator = '*'
+        if '/' in constraints[i][1]:
+            operator = '/'
+        if '-' in constraints[i][1]:
+            operator = '-'
         if operator == '':
             f.write("(assert (= "+constraints[i][2]+" "+constraints[i][1]+"))\n")
             continue
@@ -52,7 +57,6 @@ for i in range(7):
     f.write("(assert (distinct V"+str(i)+" V"+str(i+7)+" V"+str(i+14)+" V"+str(i+21)+" V"+str(i+28)+" V"+str(i+35)+" V"+str(i+42)+" ))\n")
 
 # Add constraints (addition/multiplication) to the output file
-## ADD THE SUBTRACTION AND DIVISION BELOW HERE
 for i in range(len(constraints)):
     if len(constraints[i])==3:
         cur = constraints[i][0]
@@ -63,6 +67,40 @@ for i in range(len(constraints)):
         if '*' in constraints[i][1]:
             operator = '*'
             result = constraints[i][1].strip('*')
+        if '/' in constraints[i][1]:
+            result = constraints[i][1].strip('/')
+            operator = '/'
+            regions = []
+            regions.append(constraints[i][2])
+            for j in range(len(constraints)):
+                if cur == constraints[j][0] and len(constraints[j])==2:
+                    regions.append(constraints[j][1])
+            combo = list(permutations(regions, len(regions)))
+            f.write("(assert (or ")
+            for i in range(len(combo)):
+                f.write(" (= "+result+" ("+operator)
+                for j in range(len(combo)):
+                    f.write(" "+combo[i][j])
+                f.write("))")
+            f.write("))\n")
+            continue
+        if '-' in constraints[i][1]:
+            result = constraints[i][1].strip('-')
+            operator = '-'
+            regions = []
+            regions.append(constraints[i][2])
+            for j in range(len(constraints)):
+                if cur == constraints[j][0] and len(constraints[j])==2:
+                    regions.append(constraints[j][1])
+            combo = list(permutations(regions, len(regions)))
+            f.write("(assert (or ")
+            for i in range(len(combo)):
+                f.write(" (= "+result+" ("+operator)
+                for j in range(len(combo)):
+                    f.write(" "+combo[i][j])
+                f.write("))")
+            f.write("))\n")
+            continue
         if operator == '':
             continue
         f.write("(assert (= "+result+" ("+operator+" "+constraints[i][2])
