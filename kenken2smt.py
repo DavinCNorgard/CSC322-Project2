@@ -52,6 +52,7 @@ for i in range(7):
     f.write("(assert (distinct V"+str(i)+" V"+str(i+7)+" V"+str(i+14)+" V"+str(i+21)+" V"+str(i+28)+" V"+str(i+35)+" V"+str(i+42)+" ))\n")
 
 # Add constraints (addition/multiplication) to the output file
+## ADD THE SUBTRACTION AND DIVISION BELOW HERE
 for i in range(len(constraints)):
     if len(constraints[i])==3:
         cur = constraints[i][0]
