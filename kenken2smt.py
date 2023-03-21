@@ -11,7 +11,9 @@ for i in range(7):
 for i in range(7):
     f.write("(assert (distinct V"+str(i)+" V"+str(i+7)+" V"+str(i+14)+" V"+str(i+21)+" V"+str(i+28)+" V"+str(i+35)+" V"+str(i+42)+" ))\n")
 
+## add the constraints here
 
+##
 
 f.write("(check-sat)\n")
 f.write("(get-value (")
