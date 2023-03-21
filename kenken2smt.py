@@ -23,6 +23,7 @@ with open(sys.argv[1], 'r') as fInput:
             continue
         char = line.split(",")
         for i in char:
+            i = re.sub('\n', '', i)
             i = i.split(".")
             i.append("V"+str(count))
             constraints.append(i)
