@@ -7,7 +7,7 @@ constraints = []
 count = 0
 
 # Open input file and store information
-if len(sys.argv) != 3:
+if len(sys.argv) != 1:
     print("Invalid syntax. Use ./kenken2smt <puzzle file>")
     exit()
 with open('puzzle.txt', 'r') as fInput:
