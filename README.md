@@ -17,7 +17,15 @@ To setup the files, simply run the command
 ```
 make
 ```
-This will create a symbolic link for all the Python files.
+This will create a symbolic link for all the Python files which enables you to run kenken2smt and smt2kenken without the .py extention.
+For example, you can run 
+```
+./kenken2smt <puzzle.txt >puzzle.smt
+```
+Instead of 
+```
+./kenken2smt.py <puzzle.txt >puzzle.smt
+```
 ## Running the Basic Task
 - Ensure that there is a KenKen puzzle in a file called `puzzle.txt`
 - We have provided a sample one, but you are welcome to change it to a different puzzle!
