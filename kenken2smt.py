@@ -12,7 +12,22 @@ for i in range(7):
     f.write("(assert (distinct V"+str(i)+" V"+str(i+7)+" V"+str(i+14)+" V"+str(i+21)+" V"+str(i+28)+" V"+str(i+35)+" V"+str(i+42)+" ))\n")
 
 ## add the constraints here
+constraints = []
+count = 0
 
+if len(sys.argv) != 2:
+    print("Invalid syntax. Use ./kenken2smt <puzzle file>\n")
+with open(sys.argv[1], 'r') as fInput:
+    for line in fInput:
+        if '#' in line:
+            continue
+        char = line.split(",")
+        for i in char:
+            i = i.split(".")
+            i.append("V"+str(count))
+            constraints.append(i)
+            count = count + 1
+print(constraints)
 ##
 
 f.write("(check-sat)\n")
