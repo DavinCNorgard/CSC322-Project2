@@ -7,7 +7,10 @@ given = []
 result = []
 
 # Open solved SMT file and store the information in the given list
-with open('model.smt', 'r') as f:
+if len(sys.argv) != 2:
+    print("Invalid syntax. Use ./smt2kenken <smt file>")
+    exit()
+with open(sys.argv[1], 'r') as f:
     for line in f:
         line = re.sub('\n', '', line)
         given.append(line.split(")"))

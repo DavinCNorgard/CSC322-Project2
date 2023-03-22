@@ -8,10 +8,10 @@ constraints = []
 count = 0
 
 # Open input file and store information
-if len(sys.argv) != 1:
+if len(sys.argv) != 2:
     print("Invalid syntax. Use ./kenken2smt <puzzle file>")
     exit()
-with open('puzzle.txt', 'r') as fInput:
+with open(sys.argv[1], 'r') as fInput:
     for line in fInput:
         if '#' in line:
             continue
