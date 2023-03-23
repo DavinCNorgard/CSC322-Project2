@@ -17,7 +17,7 @@ To setup the files, simply run the command
 ```
 make
 ```
-This will create a symbolic link for all the Python files which enables you to run kenken2smt and smt2kenken without the .py extention.
+This will create a symbolic link for all the Python files which enables you to run kenken2smt, smt2kenken and pp (pretty print) without the .py extention.
 For example, you can run 
 ```
 ./kenken2smt <puzzle.txt >puzzle.smt
@@ -52,4 +52,23 @@ Writing the SMT output into `solution.txt` file containing the solved KenKen:
 Now that you have the solved KenKen puzzle in `solution.txt`, you can view it in the terminal using `cat` command:
 ```
 cat solution.txt
+```
+
+## Running Pretty Print
+- There are two steps to running pp (pretty print).
+
+### Step 1
+Get the relevent puzzle information from the given website. There is a provided script called fetch that can be used for this given the puzzle id:
+```
+./fetch.sh <puzzleId> >puzzle.json
+```
+
+### Step 2
+How that you have the `puzzle.json` file you can use pp (pretty print). You can print out the `puzzle.json` to the console with the following command:
+```
+./pp puzzle.json
+```
+Or alternativly, the puzzle can be printed in a text file using the following command:
+ ```
+./pp puzzle.json >ppPuzzle.txt
 ```
