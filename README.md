@@ -8,7 +8,7 @@ Report link: https://docs.google.com/document/d/1rZLXw-sBfvqEu4YJUPtGHNAP3GBVzrJ
 - Rastin Rashidi [V00963407]
 - Davin Norgard [V00929845]
 - Jean-Medard Udeh (Jd) [V00940546]
-- 
+- Radu Ionescu [V00891249]
 
 ## Getting Started
 ### Prerequisites
