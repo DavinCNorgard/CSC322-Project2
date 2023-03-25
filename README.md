@@ -35,20 +35,27 @@ Instead of
 ### Step 1
 Generating a `puzzle.smt` file:
 ```
-./kenken2smt <puzzle.txt >puzzle.smt
+./kenken2smt (text file containing puzzle) >puzzle.smt
 ```
+For example, if your puzzle is in a text file named `puzzle.txt` you would enter:
+```
+./kenken2smt puzzle.txt >puzzle.smt
+```
+This step takes any KenKen puzzle that is in a text file and outputs the SMT constraints into the file `puzzle.smt` for mathsat to solve!
 
 ### Step 2
 Using matsat to solve the constraints generated above:
 ```
 mathsat <puzzle.smt >model.smt
 ```
+This takes in the puzzle.smt created by `kenken2smt` and outputs a solved (or unsat) SMT.
 
 ### Step 3
 Writing the SMT output into `solution.txt` file containing the solved KenKen:
 ```
 ./smt2kenken <model.smt >solutions.txt
 ```
+This takes in the model.smt created by `mathsat` and outputs the solution to the KenKen puzzle into `solutions.txt`
 
 ### Step 4
 Now that you have the solved KenKen puzzle in `solution.txt`, you can view it in the terminal using `cat` command:
@@ -64,13 +71,17 @@ Get the relevent puzzle information from the given website. There is a provided 
 ```
 ./fetch.sh <puzzleId> >puzzle.json
 ```
+For example:
+```
+./fetch.sh 22686 >puzzle.json
+```
 
 ### Step 2
-How that you have the `puzzle.json` file you can use pp (pretty print). You can print out the `puzzle.json` to the console with the following command:
+Now that you have the `puzzle.json` file you can use pp (pretty print). You can print out the `puzzle.json` to the console with the following command:
 ```
 ./pp puzzle.json
 ```
-Or alternativly, the puzzle can be printed in a text file using the following command:
+Or alternatively, the puzzle can be printed in a text file using the following command:
  ```
 ./pp puzzle.json >ppPuzzle.txt
 ```
