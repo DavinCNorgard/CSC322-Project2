@@ -7,10 +7,10 @@ given = []
 result = []
 
 # Open solved SMT file and store the information in the given list
-if len(sys.argv) != 2:
-    print("Invalid syntax. Use ./smt2kenken <smt file>")
+if len(sys.argv) != 1:
+    print("Invalid syntax. Use ./smt2kenken <model.smt >solutions.txt")
     exit()
-with open(sys.argv[1], 'r') as f:
+with open('model.smt', 'r') as f:
     for line in f:
         line = re.sub('\n', '', line)
         given.append(line.split(")"))
@@ -28,7 +28,7 @@ for i in range(1, 50):
         result.append(cur[3])
 
 # Create new solutions file and write solutions
-solution = open('solutions.txt', 'w')
+solution = open('solution.txt', 'w')
 for i in range(49):
     solution.write(result[i])
 solution.write("\n")
