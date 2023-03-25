@@ -5,7 +5,7 @@ Solving KenKen Puzzle Using an SMT (Integer) Solver
 ## Authors
 - Rastin Rashidi [V00963407]
 - Davin Norgard [V00929845]
-- 
+- Jean-Medard Udeh (Jd) [V00940546]
 - 
 
 ## Getting Started
