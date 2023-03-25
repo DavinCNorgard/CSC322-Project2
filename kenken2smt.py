@@ -9,7 +9,7 @@ count = 0
 
 # Open input file and store information
 if len(sys.argv) != 2:
-    print("Invalid syntax. Use ./kenken2smt <puzzle file>")
+    print("Invalid syntax. Use ./kenken2smt (puzzle file name) >puzzle.smt")
     exit()
 with open(sys.argv[1], 'r') as fInput:
     for line in fInput:
