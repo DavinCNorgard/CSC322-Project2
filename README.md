@@ -1,6 +1,7 @@
 # KenKen SMT Solver
 ## CSC 322 Project 2
 Solving KenKen Puzzle Using an SMT (Integer) Solver
+Report link: https://docs.google.com/document/d/1rZLXw-sBfvqEu4YJUPtGHNAP3GBVzrJHME4xNmiT7BE/edit?usp=sharing
 
 ## Authors
 - Rastin Rashidi [V00963407]
