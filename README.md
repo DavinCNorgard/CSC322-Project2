@@ -44,7 +44,7 @@ For example, if your puzzle is in a text file named `puzzle.txt` you would enter
 This step takes any KenKen puzzle that is in a text file and outputs the SMT constraints into the file `puzzle.smt` for mathsat to solve!
 
 ### Step 2
-Using matsat to solve the constraints generated above:
+Using mathsat to solve the constraints generated above:
 ```
 mathsat <puzzle.smt >model.smt
 ```
@@ -53,9 +53,9 @@ This takes in the puzzle.smt created by `kenken2smt` and outputs a solved (or un
 ### Step 3
 Writing the SMT output into `solution.txt` file containing the solved KenKen:
 ```
-./smt2kenken <model.smt >solutions.txt
+./smt2kenken <model.smt >solution.txt
 ```
-This takes in the model.smt created by `mathsat` and outputs the solution to the KenKen puzzle into `solutions.txt`
+This takes in the model.smt created by `mathsat` and outputs the solution to the KenKen puzzle into `solution.txt`
 
 ### Step 4
 Now that you have the solved KenKen puzzle in `solution.txt`, you can view it in the terminal using `cat` command:
