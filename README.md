@@ -29,7 +29,17 @@ Instead of
 ./kenken2smt.py <puzzle.txt >puzzle.smt
 ```
 ## Running the Basic Task
-- Ensure that there is a KenKen puzzle in a file called `puzzle.txt`
+- Ensure that there is a KenKen puzzle contained in a text file. For example, you can have a text file called `puzzle.txt` containing:
+```
+#kenken www.kenkenpuzzle.com Puzzle 22686 7x7 Hard
+r1.240*,r1,r2.72*,r3.6-,r3,r4.2,r5.13+
+r6.4-,r1,r2,r7.2-,r8.20*,r8,r5
+r6,r1,r2,r7,r8,r8,r9.19+
+r10.9+,r10,r11.14*,r11,r12.2/,r9,r9
+r10,r13.70*,r11,r14.336*,r12,r9,r9
+r15.13+,r13,r13,r14,r16.14+,r16,r16
+r15,r15,r15,r14,r14,r17.5-,r17
+```
 - We have provided a sample one, but you are welcome to change it to a different puzzle!
 
 ### Step 1
